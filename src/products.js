@@ -1,3 +1,10 @@
+/*
+products.js
+=====================================
+contains an object representation of all the products sold in the pirate store
+These products are stored in an array, "movies"
+Movies is then accessed in App.js
+*/
 import dvd4 from './assets/episode4dvd.jpg';
 import dvd5 from './assets/episode5dvd.jpg';
 import dvd6 from './assets/episode6dvd.jpg';
