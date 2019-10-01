@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ShoppingCart from './ShoppingCart.js'
 import ProductList from './ProductList.js';
@@ -17,7 +16,6 @@ class App extends Component {
 
 
   onToggleExpandCart = (event) =>{
-    console.log(this.state.shoppingCartDropDown);
     this.setState((state) => {return {shoppingCartDropDown: !state.shoppingCartDropDown}})  
   }
 
@@ -60,12 +58,12 @@ class App extends Component {
 
   render(){
     return <div>
-      <h1>hello </h1>
-      <ProductList onAddToCart = {this.onAddToCart} products = {movies}/>
+      <header className = "App-header">Welcome to The Pirate Shop </header>
+      <div className = "Product-list"><ProductList  onAddToCart = {this.onAddToCart} products = {movies}/>  </div>
       <ShoppingCart shoppingCartDropDown = {this.state.shoppingCartDropDown} onToggleExpandCart={this.onToggleExpandCart} onChangeItemQuantity = {this.onUpdateCartItemQuantity} onRemove = {this.onRemoveFromCart} inventory = {this.state.shoppingCartInventory}/>
     </div>
   }
-  
+
 }
 
 

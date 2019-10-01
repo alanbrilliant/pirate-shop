@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import cartImg from './assets/cart.bmp'
 
 
 
@@ -27,12 +28,12 @@ const ShoppingCart = (props) =>{
     let condensedInventory = shoppingCartInventoryCondenser(props.inventory);
     let inventoryList = Object.keys(condensedInventory).map((item) => {
         return <div>
-            <input type ="number" onChange={(event) => {
-                if (event.target.value !== ""){
+            <input className = "Cart-component" type ="number" max="200" onChange={(event) => {
+                if (event.target.value !== "" && Math.abs(event.target.value) <= event.target.max ){
                     (props.onChangeItemQuantity)(event,condensedInventory[item][0])
                 }}} 
             /> 
-            {condensedInventory[item][1]+ " "}
+            {condensedInventory[item][1]+ " in cart: "}
             {condensedInventory[item][0].name + " price: $"+ condensedInventory[item][0].price}
             <button onClick = {(event)=> (props.onRemove)(event,condensedInventory[item][0])}>remove</button>
             
@@ -41,16 +42,19 @@ const ShoppingCart = (props) =>{
 
 
 
-    if (!props.shoppingCartDropDown) {
-        console.log(props.shoppingCartDropDown)
-        inventoryList = [];}
+    if (!props.shoppingCartDropDown || props.inventory.length === 0) {
+        console.log("help")
+        inventoryList = [];
+    } else {
+        inventoryList = <div className = "Shopping-cart-expanded">{inventoryList}</div>
+    }
     return (
         <div className = {'Shopping-cart'}>
-            <p >I'm a shopping cart</p>
+            <img className = "Cart-image" src = {cartImg} alt = "shopping cart"/>
             <p>{"Items in cart: "+props.inventory.length}</p> 
             <p>{"Total Cost: $"+totalCost}</p>
             {discountGraphics}
-            <button onClick = {props.onToggleExpandCart}>expand</button>
+            <button onClick = {props.onToggleExpandCart}>expand/contract</button>
             {inventoryList}
         </div>
     )

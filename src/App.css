@@ -7,13 +7,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-color: #282c34; */
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: left;
+  justify-content: left;
+  font-size: calc(50px + 2vmin);
   color: white;
 }
 
@@ -21,13 +21,68 @@
   color: #09d3ac;
 }
 
+.Add-button{
+  border-radius: 50%;
+  background-color: #808080;
+  border: none;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; 
+  margin:4px;
+  height:50px
+}
+
+
+.Movie-image{
+  height:150px;
+  width: 100px
+}
 
 .Shopping-cart{
   position: fixed;
   top: 0;
   right: 0;
-  background-color: #09d3ac;
+  background-color: #FFFFFF;
   margin: 10px;
   padding: 10px;
+  font-size:15px
+  
+}
+
+.Shopping-cart-expanded{
+  display:flex;
+  flex-direction: column;
+  height: 1000px
+}
+
+.Product-in-productlist{
+  display:flex;
+  color: #808080;
+  background: rgba(211, 105, 19, 0.459);
+  padding: 10px;
+  margin:10px;
+  border:5px;
+  justify-content: left;
+  align-items: center
+
+}
+
+.Cart-image{
+  height:50px;
+  width:50px
+}
+
+.Product-list{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width:75%
+}
+
+
+.Cart-component{
+  width: 60px;
   
 }
