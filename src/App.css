@@ -15,6 +15,17 @@ Various styles for the app
   height:50px
 }
 
+.App-header {
+  /* background-color: #282c34; */
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  font-size: calc(50px + 2vmin);
+  color: white;
+}
+
 
 .Movie-image{
   height:150px;
